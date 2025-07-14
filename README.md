@@ -4,16 +4,16 @@
 
 ---
 
-## Overview
+## 🧽 Overview
 
 This project runs end-to-end tests on TechCrunch:
 
-* Check the "Latest News" list for missing authors or images.
-* Open an article and verify its title and links.
+* ✅ Check the **"Latest News"** list for missing authors or images.
+* ✅ Open an article and verify its title and all contained links.
 
 ---
 
-## Prerequisites
+## 🛠 Prerequisites
 
 * **Java JDK 21+**
 * **Maven 3.8+**
@@ -21,8 +21,7 @@ This project runs end-to-end tests on TechCrunch:
 
 ---
 
-
-## Technologies Used
+## 💻 Technologies Used
 
 * Selenium Java
 * TestNG
@@ -33,45 +32,47 @@ This project runs end-to-end tests on TechCrunch:
 
 ---
 
-## Installation
+## 📅 Installation
 
-1. Clone the repo:
+1. **Clone the repo:**
 
-```bash
-git clone https://bitbucket.org/kubradas/TechCrunchCase_KubraDasdogan.git
-cd TechCrunchCase_KubraDasdogan
-```
-Alternatively, you can download the project as a ZIP archive:
-https://bitbucket.org/kubradas/TechCrunchCase_KubraDasdogan/src/master/
+   ```bash
+   git clone https://bitbucket.org/kubradas/TechCrunchCase_KubraDasdogan.git
+   cd TechCrunchCase_KubraDasdogan
+   ```
 
-After extracting the ZIP file, we recommend renaming the folder to:
+   Alternatively, you can download the project as a ZIP archive:
+   [https://bitbucket.org/kubradas/TechCrunchCase\_KubraDasdogan/src/master/](https://bitbucket.org/kubradas/TechCrunchCase_KubraDasdogan/src/master/)
 
-```nginx
-TechCrunchCase_KubraDasdogan
-```
-to match the original project structure and make file navigation easier.
+   After extracting the ZIP file, we recommend renaming the folder to:
 
+   ```bash
+   TechCrunchCase_KubraDasdogan
+   ```
 
-2. Install dependencies:
+   to match the original project structure and make file navigation easier.
 
-```bash
-mvn clean install
-```
+2. **Install dependencies:**
+
+   ```bash
+   mvn clean install
+   ```
 
 ---
 
-## Configuration
+## ⚙️ Configuration
 
-Edit `src/test/resources/config.properties`:
+Edit the file:
+`src/test/resources/config.properties`
 
 ```properties
 # Site and browser settings
 baseUrl=https://techcrunch.com/
-browser=chrome      # chrome or firefox
-headless=true        # true for headless, false for browser window
+browser=chrome         # chrome or firefox
+headless=true          # true for headless, false for browser window
 ```
 
-Or use Maven options:
+Alternatively, you can override these via Maven CLI:
 
 ```bash
 mvn test -Dtest.browser=firefox -Dtest.headless=false
@@ -79,7 +80,7 @@ mvn test -Dtest.browser=firefox -Dtest.headless=false
 
 ---
 
-## Running Tests
+## ▶️ Running Tests
 
 Run all tests:
 
@@ -87,43 +88,49 @@ Run all tests:
 mvn test
 ```
 
-
 ---
 
-## Test Scenarios
+## ✅ Test Scenarios
 
-1. **Check Latest News**
+### 1. Check Latest News
 
-    * Go to the home page.
-    * Under “Latest News”, make sure each news item has an author and an image.
+* Go to the home page.
+* Under “Latest News”, make sure each news item has:
 
-2. **Verify Article Details**
+   * an **author**
+   * an **image**
 
-    * Pick a news item.
-    * Open the article page.
-    * Check that the page title matches the news title.
-    * Check that each link in the article returns HTTP 200.
+### 2. Verify Article Details
+
+* Pick a news item.
+* Open the article page.
+* Verify:
+
+   * The **page title** matches the news title.
+   * Each **link** in the article returns **HTTP 200**.
 
 ---
 
 ## 📊 Allure Reports
 
-After tests finish, results are in `target/allure-results`.
+After tests finish, raw results are stored at:
+`target/allure-results`
 
-To generate and view the report:
+To generate and open the HTML report:
 
 ```bash
 mvn allure:serve
-```  
+```
+
 ![img.png](img.png)
 
-> **Note:** You need Allure Commandline 2.x installed and in your PATH for `mvn allure:serve` to work:
+> **Note:** You must have Allure Commandline 2.x installed and available in your `PATH`.
 >
 > * macOS: `brew install allure`
 > * Windows: `choco install allure`
-> * Or download from [https://github.com/allure-framework/allure2/releases](https://github.com/allure-framework/allure2/releases)
+> * Or download manually from: [https://github.com/allure-framework/allure2/releases](https://github.com/allure-framework/allure2/releases)
 
-* Raw results: `target/allure-results`
-* HTML report: `target/allure-report`
+* 📂 Raw Results: `target/allure-results`
+* 🌐 HTML Report: `target/allure-report`
 
 ---
