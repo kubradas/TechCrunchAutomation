@@ -38,9 +38,20 @@ This project runs end-to-end tests on TechCrunch:
 1. Clone the repo:
 
 ```bash
-git clone https://bitbucket.org/your-username/TechCrunchCase_KubraDasdogan.git
+git clone https://bitbucket.org/kubradas/TechCrunchCase_KubraDasdogan.git
 cd TechCrunchCase_KubraDasdogan
 ```
+Alternatively, you can download the project as a ZIP archive:
+https://bitbucket.org/kubradas/TechCrunchCase_KubraDasdogan/src/master/
+
+After extracting the ZIP file, we recommend renaming the folder to:
+
+```nginx
+TechCrunchCase_KubraDasdogan
+```
+to match the original project structure and make file navigation easier.
+
+
 2. Install dependencies:
 
 ```bash
@@ -55,9 +66,9 @@ Edit `src/test/resources/config.properties`:
 
 ```properties
 # Site and browser settings
-test.baseUrl=https://techcrunch.com/
-test.browser=chrome      # chrome or firefox
-test.headless=true        # true for headless, false for browser window
+baseUrl=https://techcrunch.com/
+browser=chrome      # chrome or firefox
+headless=true        # true for headless, false for browser window
 ```
 
 Or use Maven options:
@@ -103,7 +114,7 @@ To generate and view the report:
 
 ```bash
 mvn allure:serve
-```
+```  
 ![img.png](img.png)
 
 > **Note:** You need Allure Commandline 2.x installed and in your PATH for `mvn allure:serve` to work:
